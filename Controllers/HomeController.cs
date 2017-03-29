@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Batmail.Controllers
+namespace Lexmail.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,5 +1,5 @@
 {
-  "name": "batmail",
+  "name": "lexmail",
   "version": "0.0.0",
   "dependencies": {
     "@types/history": "^2.0.0",

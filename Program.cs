@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Batmail
+namespace Lexmail
 {
     public class Program
     {

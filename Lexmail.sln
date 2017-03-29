@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batmail", "Batmail.csproj", "{17EC148C-597E-488D-9F6F-33A1B136BCF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lexmail", "Lexmail.csproj", "{17EC148C-597E-488D-9F6F-33A1B136BCF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
