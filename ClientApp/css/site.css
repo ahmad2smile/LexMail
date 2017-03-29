@@ -1,5 +1,5 @@
 body{
-    background: #D33800;
+    background: url('../img/mailbg.jpg') #0C3934;
 }
 
 /*
@@ -29,9 +29,63 @@ body{
 ███████ ██ ██████  ███████ ██████  ██   ██ ██   ██
 */
 
+.mdl-layout-title{
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(to right, gray 33%, #4D574C 33%, #4D574C 66%, #C34E22 66%);
+    border-image-slice: 1;
+    height: 50px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+.mdl-layout-title > div{
+    display: flex;
+    justify-content: space-between;
+}
+.mdl-layout-title > div > svg{
+    vertical-align: initial;
+    height: 50px;
+}
+
+hr{
+    margin: 0;
+}
+
 .mdl-layout__drawer{
-    margin-top: 134px;
+    background-color: #eee;
+    margin-top: 160px;
     height: 480px;
+}
+
+.mdl-navigation__link{
+    color: #222 !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.appName{
+    padding-left: 20px !important;
+    font-size: 20px;
+}
+.appName:hover{
+    background: transparent !important;
+}
+.appName > svg{
+    width: 40px;
+    shape-rendering: optimizeQuality;
+}
+
+.mdl-navigation__link:last-child{
+    padding-left: 20px !important;
+    margin-top: 175px !important;
+}
+.mdl-navigation__link:last-child:hover{
+    background-color: transparent !important;
+}
+.mdl-navigation__link:last-child > a{
+    text-decoration: none;
+    color: #222;
+    display: block;
+    margin-bottom: 10px;
 }
 
 /*
@@ -41,16 +95,32 @@ body{
    ██    ██    ██ ██      ██   ██ ██   ██ ██   ██
    ██     ██████  ██      ██████  ██   ██ ██   ██
 */
-
+.topBar{
+    height: 100px;
+}
 .topBarUpper{
-    background: #fff;
+    background: #eee;
+    height: 49%;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(to right, gray 33%, #4D574C 33%, #4D574C 66%, #C34E22 66%);
+    border-image-slice: 1;
+    font-size: 0px;
+}
+.topBarLowwer{
     height: 50%;
 }
 .topBarPageName{
-    background: rgba(255, 255, 255, 0.3);
+    padding-left: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    height: 60%;
+    font-size: 17px;
+    line-height: 30px;
+    vertical-align: middle;
 }
 .topBarStatus{
+    padding-left: 15px;
     background: rgba(255, 255, 255, 0.2);
+    height: 40%;
 }
 
 /*
@@ -64,5 +134,8 @@ body{
 .mainContent{
     background: #fff;
     background: rgba(255, 255, 255, 0.2);
-    height: 480px;
+    margin-top: 10px;
+    height: 440px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3)
 }

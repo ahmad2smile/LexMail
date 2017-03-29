@@ -7,7 +7,9 @@ interface IHomeState {}
 class Home extends React.Component<IHomeProps, IHomeState> {
     public render() {
         return (
-          <h1>Hello, world!</h1>
+          <div>
+              <div>Hello, world!</div>
+          </div>
         );
     }
 }
