@@ -1,20 +1,13 @@
 import * as React from "react";
 import { Content } from "react-mdl";
-
 import Sidebar from "./Sidebar/Sidebar";
 import FolderIcon from "../icons/FolderIcon";
 import RightArrowIcon from "../icons/RightArrowIcon";
-
-export interface LayoutProps {
-    body: React.ReactElement<any>;
-}
-
-export class Layout extends React.Component<LayoutProps, void> {
-    public render() {
-        const folderIcon = <FolderIcon/>;
-        const rightArrowIcon = <RightArrowIcon/>;
-        return (
-            <div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+export class Layout extends React.Component {
+    render() {
+        const folderIcon = <FolderIcon />;
+        const rightArrowIcon = <RightArrowIcon />;
+        return (<div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
                 <Sidebar />
                 <Content>
                     <div className="topBar">
@@ -25,10 +18,10 @@ export class Layout extends React.Component<LayoutProps, void> {
                         </div>
                     </div>
                     <div className="mainContent">
-                        { this.props.body }
+                        {this.props.body}
                     </div>
                 </Content>
-            </div>
-    );
+            </div>);
     }
 }
+//# sourceMappingURL=Layout.jsx.map

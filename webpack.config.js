@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const merge = require('webpack-merge');
 
 module.exports = (env) => {
@@ -10,24 +9,21 @@ module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const sharedConfig = () => ({
         stats: { modules: false },
-        resolve: { extensions: [ '.js', '.jsx', '.ts', '.tsx' ] },
+        resolve: { extensions: [ '.js', '.jsx', '.jsx' ] },
         output: {
             filename: '[name].js',
             publicPath: '/dist/' // Webpack dev middleware, if enabled, handles requests for this URL prefix
         },
         module: {
             rules: [
-                { test: /\.tsx?$/, include: /ClientApp/, use: 'babel-loader' },
-                { test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' }
-            ]
-        },
-        plugins: [new CheckerPlugin()]
+                { test: /\.jsx?$/, include: /ClientApp/, use: 'babel-loader' }            ]
+        }
     });
 
     // Configuration for client-side bundle suitable for running in browsers
     const clientBundleOutputDir = './wwwroot/dist';
     const clientBundleConfig = merge(sharedConfig(), {
-        entry: { 'main-client': './ClientApp/index-client.tsx' },
+        entry: { 'main-client': './ClientApp/index-client.jsx' },
         module: {
             rules: [
                 { test: /\.css$/, use: ExtractTextPlugin.extract({ use: 'css-loader' }) },
@@ -56,7 +52,7 @@ module.exports = (env) => {
     // Configuration for server-side (prerendering) bundle suitable for running in Node
     const serverBundleConfig = merge(sharedConfig(), {
         resolve: { mainFields: ['main'] },
-        entry: { 'main-server': './ClientApp/index-server.tsx' },
+        entry: { 'main-server': './ClientApp/index-server.jsx' },
         plugins: [
             new webpack.DllReferencePlugin({
                 context: __dirname,

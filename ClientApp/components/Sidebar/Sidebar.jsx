@@ -1,35 +1,27 @@
 import * as React from "react";
 import { Link } from "react-router";
 import { Drawer, Navigation } from "react-mdl";
-
 import FolderIcon from "../../icons/FolderIcon";
 import TitleIcons from "../../icons/TitleIcons";
 import FillFolderIcon from "../../icons/FillFolderIcon";
 import SettingsIcon from "../../icons/SettingsIcon";
-
-interface ISidebarProps {}
-
-interface ISidebarState {}
-
-class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
-    public render() {
-        const folderIcon = <FolderIcon/>;
-        const titleIcons = <TitleIcons/>;
-        const fillFolderIcon = <FillFolderIcon/>;
-        const settingsIcon = <SettingsIcon/>;
-
-        return (
-                <Drawer title={titleIcons}>
-                <hr/>
+class Sidebar extends React.Component {
+    render() {
+        const folderIcon = <FolderIcon />;
+        const titleIcons = <TitleIcons />;
+        const fillFolderIcon = <FillFolderIcon />;
+        const settingsIcon = <SettingsIcon />;
+        return (<Drawer title={titleIcons}>
+                <hr />
                     <Navigation>
                         <a className="appName" disabled>{folderIcon} LexMail</a>
-                        <Link to={"/"} >
+                        <Link to={"/"}>
                             {folderIcon} <span>Home</span>
                         </Link>
-                        <Link to={"/counter"} >
+                        <Link to={"/counter"}>
                             {folderIcon} <span>Counter</span>
                         </Link>
-                        <Link to={"/fetchdata"} >
+                        <Link to={"/fetchdata"}>
                             {folderIcon} <span>Fetch data</span>
                         </Link>
                         <div>
@@ -37,9 +29,8 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
                             <a href="#">{settingsIcon}<span> Config</span></a>
                         </div>
                     </Navigation>
-                </Drawer>
-        );
+                </Drawer>);
     }
 }
-
-export default Sidebar;﻿
+export default Sidebar;
+//# sourceMappingURL=Sidebar.jsx.map
