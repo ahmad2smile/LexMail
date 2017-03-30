@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import ListIcon from "./ListIcon";
 import SearchIcon from "./SearchIcon";
-class titleIcons extends React.Component {
+
+class TitleIcons extends React.Component {
     render() {
         return (<div>
             <ListIcon />
@@ -9,5 +11,4 @@ class titleIcons extends React.Component {
           </div>);
     }
 }
-export default titleIcons;
-//# sourceMappingURL=TitleIcons.jsx.map
+export default TitleIcons;
