@@ -15,27 +15,27 @@ class Sidebar extends React.Component {
                 <Navigation>
                     <a className="appName" disabled><FolderIcon/>LexMail</a>
 
-                    <Link to={"/"}>
+                    <Link to={"/"} activeClassName="activeLink_myCustomClass">
                         <FolderIcon/>
-                        <span>Home</span>
+                        <span>Dashboard</span>
                     </Link>
 
-                    <Link to={"/counter"}>
+                    <Link to={"/templates"} activeClassName="activeLink_myCustomClass">
                         <FolderIcon/>
-                        <span>Counter</span>
+                        <span>Templates</span>
                     </Link>
 
-                    <Link to={"/fetchdata"}>
+                    <Link to={"/fetchdata"} activeClassName="activeLink_myCustomClass">
                         <FolderIcon/>
                         <span>Fetch data</span>
                     </Link>
 
                     <div>
                         <a href="#">{< FillFolderIcon />}
-                            <span>New Template</span>
+                            <span>  New Template</span>
                         </a>
                         <a href="#">{< SettingsIcon />}
-                            <span>Config</span>
+                            <span>  Config</span>
                         </a>
                     </div>
                 </Navigation>
