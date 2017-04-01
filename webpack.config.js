@@ -27,7 +27,11 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.css$/, use: ExtractTextPlugin.extract({ use: 'css-loader' }) },
-                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
+                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' },
+                {
+                    test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+                    loader: 'url-loader'
+                }
             ]
         },
         output: { path: path.join(__dirname, clientBundleOutputDir) },

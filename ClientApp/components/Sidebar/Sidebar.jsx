@@ -20,9 +20,9 @@ class Sidebar extends React.Component {
                         <span>Home</span>
                     </Link>
 
-                    <Link to={"/counter"}>
+                    <Link to={"/templates"}>
                         <FolderIcon/>
-                        <span>Counter</span>
+                        <span>Templates</span>
                     </Link>
 
                     <Link to={"/fetchdata"}>
@@ -32,10 +32,10 @@ class Sidebar extends React.Component {
 
                     <div>
                         <a href="#">{< FillFolderIcon />}
-                            <span>New Template</span>
+                            <span>  New Template</span>
                         </a>
                         <a href="#">{< SettingsIcon />}
-                            <span>Config</span>
+                            <span>  Config</span>
                         </a>
                     </div>
                 </Navigation>

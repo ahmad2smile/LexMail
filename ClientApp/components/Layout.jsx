@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Content } from "react-mdl";
+
 import Sidebar from "./Sidebar/Sidebar";
 import FolderIcon from "../icons/FolderIcon";
 import RightArrowIcon from "../icons/RightArrowIcon";
+
 export class Layout extends React.Component {
     render() {
         return (<div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
