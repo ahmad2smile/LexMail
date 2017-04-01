@@ -161,6 +161,11 @@ hr{
     padding: 10px 20px 30px 20px;
     border: 1px solid rgba(255, 255, 255, 0.3)
 }
+.theArchetectImg{
+    height: 300px;
+    background: url('../img/thearchetect.png') #fff no-repeat;
+    background-size: contain;
+}
 
 /*
 ████████ ███████ ███    ███ ██████  ██       █████  ████████ ███████ ███████
