@@ -76,6 +76,13 @@ hr{
     margin-top: 10px !important;
 }
 
+.activeLink_myCustomClass{
+    background: #DE3903;
+}
+.activeLink_myCustomClass:hover{
+    background: #f56232 !important;
+}
+
 .appName{
     padding-left: 20px !important;
     font-size: 20px;

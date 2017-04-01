@@ -13,7 +13,7 @@ export class Layout extends React.Component {
                     <div className="topBar">
                         <div className="topBarUpper">TopBar Upper</div>
                         <div className="topBarLowwer">
-                            <div className="topBarPageName"><RightArrowIcon /><FolderIcon /> Home</div>
+                            <div className="topBarPageName"><RightArrowIcon /><FolderIcon /> {this.props.location.pathname}</div>
                             <div className="topBarStatus">LexMail active right now</div>
                         </div>
                     </div>
