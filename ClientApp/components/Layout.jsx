@@ -5,6 +5,8 @@ import Sidebar from "./Sidebar/Sidebar";
 import FolderIcon from "../icons/FolderIcon";
 import RightArrowIcon from "../icons/RightArrowIcon";
 
+import "../../node_modules/react-mdl/extra/material";
+
 export class Layout extends React.Component {
     render() {
         return (<div className="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">

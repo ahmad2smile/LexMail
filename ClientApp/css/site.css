@@ -64,7 +64,7 @@ hr{
 }
 
 .mdl-layout__drawer{
-    background-color: #eee;
+    background-color: #fff;
     margin-top: 160px;
     height: 480px;
 }
@@ -78,6 +78,7 @@ hr{
 
 .activeLink_myCustomClass{
     background: #DE3903;
+    color: #fff !important;
 }
 .activeLink_myCustomClass:hover{
     background: #f56232 !important;
@@ -121,7 +122,7 @@ hr{
     height: 100px;
 }
 .topBarUpper{
-    background: #eee;
+    background: #fff;
     height: 49%;
     border-top: 4px solid transparent;
     border-image: linear-gradient(to right, gray 33%, #4D574C 33%, #4D574C 66%, #C34E22 66%);
@@ -159,10 +160,13 @@ hr{
     margin-top: 10px;
     min-height: 458px;
     padding: 10px 20px 10px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3)
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-around;
 }
 .theArchetectImg{
     height: 300px;
+    width: 100%;
     background: url('../img/thearchetect.png') #fff no-repeat;
     background-size: contain;
 }
@@ -270,4 +274,35 @@ hr{
 .defaultSelectBox > svg{
     height: 15px;
     width: 20px;
+}
+
+/*
+███    ██ ███████ ██     ██     ████████ ███████ ███    ███ ██████  ██       █████  ████████ ███████
+████   ██ ██      ██     ██        ██    ██      ████  ████ ██   ██ ██      ██   ██    ██    ██
+██ ██  ██ █████   ██  █  ██        ██    █████   ██ ████ ██ ██████  ██      ███████    ██    █████
+██  ██ ██ ██      ██ ███ ██        ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██
+██   ████ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
+*/
+
+.newTemplateContainer{
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+}
+
+.mdl-textfield__label, .mdl-textfield__label::after{
+    color: #4d574c !important;
+}
+
+.newTemplateHead{
+    font-size: 20px;
+}
+
+.newTemplateContainer form textarea{
+    height: 190px;
+}
+
+.newTemplateContainer button:active,.newTemplateContainer button:hover{
+    background: #DF3A02;
+    color: #fff;
 }

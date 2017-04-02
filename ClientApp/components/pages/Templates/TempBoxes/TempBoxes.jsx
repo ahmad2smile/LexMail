@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 
-import FolderIcon from "../../../icons/FolderIcon";
-import RightArrowIcon from "../../../icons/RightArrowIcon";
+import FolderIcon from "../../../../icons/FolderIcon";
+import RightArrowIcon from "../../../../icons/RightArrowIcon";
 
 class TempBoxes extends React.Component {
     constructor(){
@@ -23,8 +23,8 @@ class TempBoxes extends React.Component {
 
     render () {
 
-        let boxBg = `http://lorempixel.com/228/205/nightlife/`+this.randomNum;
-        // let boxBg = `something for dev`+this.randomNum;
+        // let boxBg = `http://lorempixel.com/228/205/nightlife/`+this.randomNum;
+        let boxBg = `something for dev`+this.randomNum;
 
         return (
             <div className="boxContainer">

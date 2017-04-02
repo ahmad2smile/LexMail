@@ -31,12 +31,14 @@ class Sidebar extends React.Component {
                     </Link>
 
                     <div>
-                        <a href="#">{< FillFolderIcon />}
+                        <Link to={"/newtemplate"} activeClassName="activeLink_myCustomClass">
+                            {< FillFolderIcon />}
                             <span>  New Template</span>
-                        </a>
-                        <a href="#">{< SettingsIcon />}
+                        </Link>
+                        <Link to={"/config"} activeClassName="activeLink_myCustomClass">
+                            {< SettingsIcon />}
                             <span>  Config</span>
-                        </a>
+                        </Link>
                     </div>
                 </Navigation>
             </Drawer>
