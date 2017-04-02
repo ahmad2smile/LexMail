@@ -24,10 +24,11 @@ class TempBoxes extends React.Component {
     render () {
 
         let boxBg = `http://lorempixel.com/228/205/nightlife/`+this.randomNum;
+        // let boxBg = `something for dev`+this.randomNum;
 
         return (
             <div className="boxContainer">
-                <a href="#" className="templateRefBox mdl-shadow--6dp">
+                <a href="#" className="templateRefBox">
                     <div className="bgImageContainer">
                         <div className="templateTag">{this.props.templateTagLetter}</div>
                         <div className="templateName">{this.props.templateName}</div>

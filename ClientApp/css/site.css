@@ -157,8 +157,8 @@ hr{
     background: #fff;
     background: rgba(255, 255, 255, 0.2);
     margin-top: 10px;
-    min-height: 440px;
-    padding: 10px 20px 30px 20px;
+    min-height: 458px;
+    padding: 10px 20px 10px 20px;
     border: 1px solid rgba(255, 255, 255, 0.3)
 }
 .theArchetectImg{
@@ -178,23 +178,36 @@ hr{
 .boxContainer{
     background: transparent;
     width: 228px;
-    height: 205px;
+    height: 198px;
     position: relative;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(to right,#C34E22 10%, transparent 10%);
+    border-image-slice: 1;
+    padding-top: 3px;
 }
+
 .templateRefBox{
     overflow: hidden;
     width: 228px;
-    height: 205px;
+    height: 198px;
     clip-path: polygon(0% 0%,0% 105%,105% 105%,105% 20%,80% 20%,80% 0%);
     position: absolute;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to left,#C34E22 10%, transparent 10%);
+    border-image-slice: 1;
+    padding-bottom: 3px;
+    box-shadow: 0 -6px 10px 0 rgba(0,0,0,.14), 0 -6px 18px 0 rgba(0,0,0,.12), 0 -6px 5px -1px rgba(0,0,0,.2);
 }
 
 .bgImageContainer{
     background: rgba(43, 77, 69, 0.7);
     width: 228px;
-    height: 205px;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0), 0 1px 18px 0 rgba(0, 0, 0, 0.02), 0 3px 5px -1px rgba(0,0,0,.1);
 }
 .templateTag{
+    filter: drop-shadow(1px 3px 7px black);
     width: 100%;
     top: 45%;
     text-decoration: none;
