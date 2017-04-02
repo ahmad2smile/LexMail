@@ -4,7 +4,7 @@ import {Layout, Grid, Cell, Textfield, Button} from "react-mdl";
 class NewTemplate extends React.Component {
     render() {
         return (
-            <Grid className="newTemplateContainer">
+            <Grid className="newContainer newTemplateContainer">
                 <Cell col={12}>
                     <div className="newTemplateHead">New Template</div>
                     <form action="/">

@@ -171,6 +171,12 @@ hr{
     background-size: contain;
 }
 
+.newContainer{
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+}
+
 /*
 ████████ ███████ ███    ███ ██████  ██       █████  ████████ ███████ ███████
    ██    ██      ████  ████ ██   ██ ██      ██   ██    ██    ██      ██
@@ -283,12 +289,6 @@ hr{
 ██  ██ ██ ██      ██ ███ ██        ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██
 ██   ████ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
 */
-
-.newTemplateContainer{
-    width: 100%;
-    background: #fff;
-    padding: 20px;
-}
 
 .mdl-textfield__label, .mdl-textfield__label::after{
     color: #4d574c !important;
