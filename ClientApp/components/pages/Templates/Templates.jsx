@@ -1,27 +1,60 @@
 import * as React from "react";
 import { Grid, Cell } from "react-mdl";
+import { connect } from "react-redux";
 
-import TempBoxes from "./TempBoxes/TempBoxes"
+import TempBoxes from "./TempBoxes/TempBoxes";
+import { getAllTemplates } from "../../../actions/templatesActions";
 
+@connect((store)=>{
+    return {
+        allTemplates: store.templates.allTemplates,
+        fetching: store.templates.fetching,
+        fetched: store.templates.fetched,
+        error: store.templates.error
+    };
+})
 class Templates extends React.Component {
+    constructor(){
+        super();
+
+        this.state = {
+            defaultSelected: false
+        }
+    }
+
+    componentWillMount(){
+        this.props.dispatch(getAllTemplates());
+    }
+
+    defaulSelectHandler(boxData, e){
+        if (e.target !== e.currentTarget) {
+            console.log(this.props.allTemplates);
+        }
+        e.stopPropagation();
+    }
+
+    renderAllTemplates(){
+        let allTempBoxes = [];
+        if(!this.props.fetching && this.props.fetched){
+            allTempBoxes = this.props.allTemplates[0]
+                            .map((boxData, i)=>{
+                                return (
+                                    <Cell key={i}>
+                                        <TempBoxes
+                                            onClick={e => this.defaulSelectHandler(boxData, e)}
+                                            {...boxData}
+                                            />
+                                    </Cell>
+                                );
+                            });
+        }
+        return allTempBoxes;
+    }
+
     render() {
         return (
             <Grid>
-                <Cell>
-                    <TempBoxes templateTagLetter="W" templateName="Bla Bla Name" templateCTime="1 Hour ago"/>
-                </Cell>
-                <Cell>
-                    <TempBoxes templateTagLetter="C" templateName="Bla Bla Name Too long Name Right Here" templateCTime="1 Hour ago"/>
-                </Cell>
-                <Cell>
-                    <TempBoxes templateTagLetter="F" templateName="Bla Bla Name" templateCTime="1 Hour ago"/>
-                </Cell>
-                <Cell>
-                    <TempBoxes templateTagLetter="A" templateName="Bla Bla Name" templateCTime="1 Hour ago"/>
-                </Cell>
-                <Cell>
-                    <TempBoxes templateTagLetter="B" templateName="Bla Bla Name" templateCTime="1 Hour ago"/>
-                </Cell>
+                {this.renderAllTemplates()}
             </Grid>
         );
     }
