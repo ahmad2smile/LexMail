@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function getAllTemplates(params) {
+export function getAllTemplates() {
     return (dispatch) => axios.get("http://localhost:3000/templates")
             .then((response)=>{
                 dispatch({
@@ -12,6 +12,17 @@ export function getAllTemplates(params) {
                 dispatch({
                     type: "FETCH_TEMPLATES_REJECTED",
                     payload: err
+                });
+            });
+}
+
+export function setDefaultTemplate(prvDefaultTempId, id) {
+    axios.patch( `http://localhost:3000/templates/${prvDefaultTempId}`, { "templateDefault": false } )
+    return (dispatch) => axios.patch( `http://localhost:3000/templates/${id}`, { "templateDefault": true } )
+            .then((response) =>{
+                dispatch({
+                    type: "SET_DEFAULT_TEMPLATE",
+                    payload: response
                 });
             });
 }

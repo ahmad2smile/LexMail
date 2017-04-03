@@ -8,6 +8,7 @@ class TempBoxes extends React.Component {
 
         // let boxBg = `http://lorempixel.com/228/205/nightlife/`+this.props.randomNum;
         let boxBg = `something for dev`+ this.props.randomNum;
+        let selectBg = this.props.templateDefault ? "#C34E22" : "transparent";
 
         return (
             <div className="boxContainer">
@@ -19,7 +20,7 @@ class TempBoxes extends React.Component {
                         <img src={boxBg}/>
                     </div>
                 </a>
-                <a onClick={this.props.onClick} href="#" className="defaultSelectBox">
+                <a style={{backgroundColor: selectBg}} onClick={this.props.onClick} href="#" className="defaultSelectBox">
                     <RightArrowIcon/><FolderIcon/>
                 </a>
             </div>

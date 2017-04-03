@@ -275,6 +275,7 @@ hr{
     padding-top: 7px;
     position: absolute;
     right: 0;
+    background-clip: content-box;
 }
 
 .defaultSelectBox > svg{
