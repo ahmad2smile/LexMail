@@ -5,7 +5,7 @@
       "templateTagLetter": "W",
       "templateName": "bla bla bla",
       "templateCTime": "4/18/2015",
-      "templateDefault": false,
+      "templateDefault": true,
       "randomNum": 1
     },
     {
@@ -13,7 +13,7 @@
       "templateTagLetter": "C",
       "templateName": "bla bla bla",
       "templateCTime": "4/18/2015",
-      "templateDefault": true,
+      "templateDefault": false,
       "randomNum": 3
     },
     {

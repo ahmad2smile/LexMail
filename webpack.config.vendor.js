@@ -17,6 +17,8 @@ module.exports = (env) => {
         },
         entry: {
             vendor: [
+                'materialize-css/dist/js/materialize',
+                'materialize-css/dist/css/materialize.css',
                 'material-design-lite/material',
                 'material-design-lite/material.min.css',
                 'domain-task',

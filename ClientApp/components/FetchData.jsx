@@ -15,8 +15,7 @@ class FetchData extends React.Component {
     }
     render() {
         return <div>
-            <h1>Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server and working with URL parameters.</p>
+            <h5>Weather forecast</h5>
             {this.renderForecastsTable()}
             {this.renderPagination()}
         </div>;

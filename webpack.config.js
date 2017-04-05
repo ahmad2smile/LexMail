@@ -16,7 +16,8 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.jsx?$/, include: /ClientApp/, use: 'babel-loader' }            ]
+                { test: /\.jsx?$/, include: /ClientApp/, use: 'babel-loader' }
+            ]
         }
     });
 

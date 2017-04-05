@@ -24,11 +24,11 @@ describe("Sidebar", () => {
     });
 
     it('contains 1 TitleIcons', () => {
-        expect(shallow( <Sidebar /> ).find(Drawer).props().title).toEqual(<TitleIcons/>);
+        expect(shallow( <Sidebar /> ).find(TitleIcons).length).toBe(1);
     });
 
     it('contains 3 Links', () => {
-        expect(shallow( <Sidebar /> ).find(Link).length).toBe(3);
+        expect(shallow( <Sidebar /> ).find(Link).length).toBe(5);
     });
 
 });

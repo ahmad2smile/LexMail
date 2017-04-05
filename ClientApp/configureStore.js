@@ -23,4 +23,3 @@ export default function configureStore(initialState) {
 function buildRootReducer(allReducers) {
     return combineReducers(Object.assign({}, allReducers, { routing: routerReducer }));
 }
-//# sourceMappingURL=configureStore.js.map

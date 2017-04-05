@@ -1,25 +1,19 @@
 import React, {PropTypes} from "react";
-import {Layout, Grid, Cell, Textfield, Button} from "react-mdl";
+import { Row, Input, Button } from "react-materialize";
 
 class NewTemplate extends React.Component {
     render() {
         return (
-            <Grid className="newContainer newTemplateContainer">
-                <Cell col={12}>
+            <Row className="newContainer newTemplateContainer">
+                <div >
                     <div className="newTemplateHead">New Template</div>
                     <form action="/">
-                        <Cell col={12}>
-                            <Textfield onChange={() => {}} required label="Template Name" floatingLabel style={{width:"100%"}}/>
-                        </Cell>
-                        <Cell className="newTemplateBody" col={12}>
-                            <Textfield label="" required rows={3} style={{width:"100%"}}/>
-                        </Cell>
-                        <Cell col={12}>
-                            <Button raised ripple>Save</Button>
-                        </Cell>
+                        <Input l={12} label="Template Name"  style={{width:"100%"}}/>
+                        <textarea className="materialize-textarea"></textarea>
+                        <Button waves="light">Save</Button>
                     </form>
-                </Cell>
-            </Grid>
+                </div>
+            </Row>
         );
     }
 }

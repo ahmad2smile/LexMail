@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Grid, Cell } from "react-mdl";
 import { connect } from "react-redux";
-import axios from "axios";
+import { Row, Col } from "react-materialize";
 
 import TempBoxes from "./TempBoxes/TempBoxes";
 import { getAllTemplates, setDefaultTemplate } from "../../../actions/templatesActions";
@@ -55,12 +54,12 @@ class Templates extends React.Component {
                                     boxData.templateDefault = false;
                                 }
                                 return (
-                                    <Cell key={i}>
+                                    <Col l={4} key={i}>
                                         <TempBoxes
                                             onClick={e => this.defaulSelectHandler(boxData, e)}
                                             {...boxData}
                                             />
-                                    </Cell>
+                                    </Col>
                                 );
                             });
         }
@@ -69,9 +68,9 @@ class Templates extends React.Component {
 
     render() {
         return (
-            <Grid>
+            <Row>
                 {this.renderAllTemplates()}
-            </Grid>
+            </Row>
         );
     }
 }
