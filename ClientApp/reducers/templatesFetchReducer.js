@@ -5,13 +5,13 @@ export default function reducer(state={
     error: null
 }, action){
     switch (action.type) {
-        case "FETCH_TEMPLATES":
+        case "TEMPLATES_FETCH":
             return {...state, fetching: true}
             break;
-        case "FETCH_TEMPLATES_FULFILLED":
+        case "TEMPLATES_FETCH_FULFILLED":
             return {...state, fetching: false,  fetched: true, allTemplates: [...state.allTemplates, action.payload]};
             break;
-        case "FETCH_TEMPLATES_REJECTED":
+        case "TEMPLATES_FETCH_REJECTED":
             return {...state, fetching: true, fetched: true, error: action.payload};
             break;
         default:
