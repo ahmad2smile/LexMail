@@ -32,3 +32,29 @@ export function setDefaultTemplate(prvDefaultTempId, defaultTempId) {
             });
         }
 }
+
+export function createNewTemplate(newTempData) {
+    return (dispatch)=>{
+        axios.post(`http://localhost:3000/templates`,{
+            "id": 4,
+            "templateTagLetter": newTempData.newTempTag,
+            "templateName": newTempData.newTempName,
+            "templateCTime": "4/18/2015",
+            "templateDefault": false,
+            "randomNum": 6,
+            "templateBody": newTempData.newTempBody
+        })
+        .then((response)=>{
+            dispatch({
+                type: "TEMPLATES_CREATE_FULFILLED",
+                payload: response
+            });
+        })
+        .catch((err)=>{
+            dispatch({
+                type: "TEMPLATES_CREATE_REJECTED",
+                payload: err
+            });
+        });
+    }
+}

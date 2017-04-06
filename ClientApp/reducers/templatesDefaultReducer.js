@@ -4,7 +4,7 @@ export default function reducer(state={
     err: null
 }, action){
     switch (action.type) {
-        case "TEMPLATES_DEFAULT_FULFILLED":           
+        case "TEMPLATES_DEFAULT_FULFILLED":
             return {...state, prvDefaultTempId: action.payload.prvDefaultTempId, defaultTempId: action.payload.defaultTempId};
             break;
         case "TEMPLATES_DEFAULT_REJECTED":

@@ -42,7 +42,7 @@ class Templates extends React.Component {
                                     boxData.templateDefault = false;
                                 }
                                 return (
-                                    <Col l={4} key={i}>
+                                    <Col key={i}>
                                         <TempBoxes
                                             onClick={e => this.defaulSelectHandler(boxData, e)}
                                             {...boxData}
@@ -63,4 +63,4 @@ class Templates extends React.Component {
     }
 }
 
-export default Templates
+export default Templates;

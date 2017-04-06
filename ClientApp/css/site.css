@@ -186,6 +186,12 @@ hr{
     display: flex;
     justify-content: space-around;
 }
+
+.mainContent > .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .theArchetectImg{
     height: 300px;
     width: 100%;

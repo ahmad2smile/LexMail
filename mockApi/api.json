@@ -5,8 +5,9 @@
       "templateTagLetter": "W",
       "templateName": "bla bla bla",
       "templateCTime": "4/18/2015",
-      "templateDefault": false,
-      "randomNum": 1
+      "templateDefault": true,
+      "randomNum": 1,
+      "templateBody": "Bla blaasldjnsldknnflasndfnsdlfnalksdnfflkansdlknslkdnn"
     },
     {
       "id": 2,
@@ -14,31 +15,26 @@
       "templateName": "bla bla bla",
       "templateCTime": "4/18/2015",
       "templateDefault": false,
-      "randomNum": 3
+      "randomNum": 3,
+      "templateBody": "Bla blaasldjnsldknnflasndfnsdlfnalksdnfflkansdlknslkdnn"
     },
     {
       "id": 3,
-      "templateTagLetter": "F",
-      "templateName": "bla bla bla",
+      "templateTagLetter": "K",
+      "templateName": "Kudoos",
       "templateCTime": "4/18/2015",
-      "templateDefault": true,
-      "randomNum": 2
+      "templateDefault": false,
+      "randomNum": 6,
+      "templateBody": "dfljsndlfknsldknflsdk"
     },
     {
       "id": 4,
-      "templateTagLetter": "A",
-      "templateName": "bla bla bla",
+      "templateTagLetter": "C",
+      "templateName": "Ching Ming",
       "templateCTime": "4/18/2015",
       "templateDefault": false,
-      "randomNum": 5
-    },
-    {
-      "id": 5,
-      "templateTagLetter": "B",
-      "templateName": "bla bla bla",
-      "templateCTime": "4/18/2015",
-      "templateDefault": false,
-      "randomNum": 8
+      "randomNum": 6,
+      "templateBody": "lsdfnslkdnflskn"
     }
   ]
 }
