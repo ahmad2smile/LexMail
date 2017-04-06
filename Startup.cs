@@ -1,3 +1,4 @@
+using Lexmail.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -24,7 +25,7 @@ namespace Lexmail
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
+            services.AddScoped<ITemplatesService, TemplatesService>();
             services.AddMvc();
         }
 

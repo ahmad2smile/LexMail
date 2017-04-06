@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function getAllTemplates() {
-    return (dispatch) => axios.get("http://localhost:3000/templates")
+    return (dispatch) => axios.get("/api/templates")
             .then((response)=>{
                 dispatch({
                     type: "TEMPLATES_FETCH_FULFILLED",
