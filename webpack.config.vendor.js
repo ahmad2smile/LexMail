@@ -17,7 +17,9 @@ module.exports = (env) => {
         },
         entry: {
             vendor: [
-                'material-design-lite/material.min.js',
+                'materialize-css/dist/js/materialize',
+                'materialize-css/dist/css/materialize.css',
+                'material-design-lite/material',
                 'material-design-lite/material.min.css',
                 'domain-task',
                 'event-source-polyfill',

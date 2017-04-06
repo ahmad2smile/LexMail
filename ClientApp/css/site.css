@@ -7,6 +7,13 @@
     url('../fonts/Phage/phageRegular.woff') format('woff'),
     url('../fonts/Phage/phageRegular.woff2') format('woff2');
 }
+@font-face {
+    font-family: 'Robot Light';
+    src:  url('../fonts/Roboto/roboto-light.eot') format('eot'),
+    url('../fonts/Roboto/roboto-light.svg') format('svg'),
+    url('../fonts/Roboto/roboto-light.woff') format('woff'),
+    url('../fonts/Roboto/roboto-light.woff2') format('woff2');
+}
 
 html{
     background: url('../img/mailbg.jpg') #1e9f91 no-repeat;
@@ -33,6 +40,17 @@ body{
     margin-top: 50px;
 }
 
+.sideNavToggleBtn{
+    position: absolute;
+    cursor: pointer;
+    top: 165px;
+    z-index: 100;
+    background: #DF3A02;
+    padding: 3px;
+    outline: 2px solid gray;
+    margin-left: 3px;
+}
+
 
 /*
 ███████ ██ ██████  ███████ ██████   █████  ██████
@@ -50,7 +68,7 @@ body{
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
-.mdl-layout-title > div{
+.mdl-layout-title > div {
     display: flex;
     justify-content: space-between;
 }
@@ -64,9 +82,13 @@ hr{
 }
 
 .mdl-layout__drawer{
-    background-color: #eee;
+    background-color: #fff;
     margin-top: 160px;
-    height: 480px;
+    height: 457px;
+}
+
+.mdl-navigation{
+    padding-top: 0 !important;
 }
 
 .mdl-navigation__link{
@@ -78,6 +100,7 @@ hr{
 
 .activeLink_myCustomClass{
     background: #DE3903;
+    color: #fff !important;
 }
 .activeLink_myCustomClass:hover{
     background: #f56232 !important;
@@ -121,7 +144,7 @@ hr{
     height: 100px;
 }
 .topBarUpper{
-    background: #eee;
+    background: #fff;
     height: 49%;
     border-top: 4px solid transparent;
     border-image: linear-gradient(to right, gray 33%, #4D574C 33%, #4D574C 66%, #C34E22 66%);
@@ -157,14 +180,23 @@ hr{
     background: #fff;
     background: rgba(255, 255, 255, 0.2);
     margin-top: 10px;
-    min-height: 440px;
-    padding: 10px 20px 30px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3)
+    min-height: 458px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-around;
 }
 .theArchetectImg{
     height: 300px;
+    width: 100%;
     background: url('../img/thearchetect.png') #fff no-repeat;
     background-size: contain;
+}
+
+.newContainer{
+    width: 100%;
+    background: #fff;
+    padding: 20px;
 }
 
 /*
@@ -178,23 +210,37 @@ hr{
 .boxContainer{
     background: transparent;
     width: 228px;
-    height: 205px;
+    height: 198px;
     position: relative;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(to right,#C34E22 10%, transparent 10%);
+    border-image-slice: 1;
+    padding-top: 3px;
+    margin-top: 10px;
 }
+
 .templateRefBox{
     overflow: hidden;
     width: 228px;
-    height: 205px;
+    height: 198px;
     clip-path: polygon(0% 0%,0% 105%,105% 105%,105% 20%,80% 20%,80% 0%);
     position: absolute;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to left,#C34E22 10%, transparent 10%);
+    border-image-slice: 1;
+    padding-bottom: 3px;
+    box-shadow: 0 -6px 10px 0 rgba(0,0,0,.14), 0 -6px 18px 0 rgba(0,0,0,.12), 0 -6px 5px -1px rgba(0,0,0,.2);
 }
 
 .bgImageContainer{
     background: rgba(43, 77, 69, 0.7);
     width: 228px;
-    height: 205px;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0), 0 1px 18px 0 rgba(0, 0, 0, 0.02), 0 3px 5px -1px rgba(0,0,0,.1);
 }
 .templateTag{
+    filter: drop-shadow(1px 3px 7px black);
     width: 100%;
     top: 45%;
     text-decoration: none;
@@ -248,13 +294,58 @@ hr{
 
 .defaultSelectBox{
     width: 40px;
-    height: 25px;
+    height: 31px;
     padding-top: 7px;
     position: absolute;
     right: 0;
+    background-clip: content-box;
 }
 
 .defaultSelectBox > svg{
     height: 15px;
     width: 20px;
+}
+
+/*
+███    ██ ███████ ██     ██     ████████ ███████ ███    ███ ██████  ██       █████  ████████ ███████
+████   ██ ██      ██     ██        ██    ██      ████  ████ ██   ██ ██      ██   ██    ██    ██
+██ ██  ██ █████   ██  █  ██        ██    █████   ██ ████ ██ ██████  ██      ███████    ██    █████
+██  ██ ██ ██      ██ ███ ██        ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██
+██   ████ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
+*/
+
+.newTemplateContainer form input:focus,.newTemplateContainer form textarea:focus{
+    border-bottom-color: #DF3A02 !important;
+    box-shadow: 0 1px 0 0 #DF3A02 !important;
+}
+.newTemplateContainer form label{
+    color: #444 !important;
+}
+
+.newTemplateHead{
+    font-size: 20px;
+}
+
+.newTemplateContainer form{
+    height: 363px;
+    overflow: hidden;
+}
+
+.newTemplateContainer form textarea{
+    overflow-y: auto;
+    height: 190px !important;
+}
+.newTemplateContainer form textarea:focus{
+    overflow-y: auto;
+    height: 190px !important;
+}
+
+.newTemplateContainer button:active,.newTemplateContainer button:hover{
+    background: #DF3A02;
+    color: #fff;
+}
+
+.newTemplateContainer button{
+    background: #4D574C;
+    color: #fff;
 }

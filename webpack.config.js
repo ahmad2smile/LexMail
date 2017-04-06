@@ -9,14 +9,15 @@ module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const sharedConfig = () => ({
         stats: { modules: false },
-        resolve: { extensions: [ '.js', '.jsx', '.jsx' ] },
+        resolve: { extensions: [ '.js', '.jsx', '.jsx'] },
         output: {
             filename: '[name].js',
             publicPath: '/dist/' // Webpack dev middleware, if enabled, handles requests for this URL prefix
         },
         module: {
             rules: [
-                { test: /\.jsx?$/, include: /ClientApp/, use: 'babel-loader' }            ]
+                { test: /\.jsx?$/, include: /ClientApp/, use: 'babel-loader' }
+            ]
         }
     });
 
@@ -27,17 +28,8 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.css$/, use: ExtractTextPlugin.extract({ use: 'css-loader' }) },
-                {
-                    test: /\.(png|jpg|gif|svg)$/,
-                    loader: 'file-loader',
-                    options: {
-                      name: '[name].[ext]?[hash]'
-                    }
-                },
-                {
-                    test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-                    loader: 'url-loader'
-                }
+                { test: /\.(png|jpg|gif|svg)$/, loader: 'file-loader' },
+                { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/, loader: 'url-loader' }
             ]
         },
         output: { path: path.join(__dirname, clientBundleOutputDir) },

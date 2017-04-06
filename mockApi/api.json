@@ -1,0 +1,44 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "templateTagLetter": "W",
+      "templateName": "bla bla bla",
+      "templateCTime": "4/18/2015",
+      "templateDefault": true,
+      "randomNum": 1
+    },
+    {
+      "id": 2,
+      "templateTagLetter": "C",
+      "templateName": "bla bla bla",
+      "templateCTime": "4/18/2015",
+      "templateDefault": false,
+      "randomNum": 3
+    },
+    {
+      "id": 3,
+      "templateTagLetter": "F",
+      "templateName": "bla bla bla",
+      "templateCTime": "4/18/2015",
+      "templateDefault": false,
+      "randomNum": 2
+    },
+    {
+      "id": 4,
+      "templateTagLetter": "A",
+      "templateName": "bla bla bla",
+      "templateCTime": "4/18/2015",
+      "templateDefault": false,
+      "randomNum": 5
+    },
+    {
+      "id": 5,
+      "templateTagLetter": "B",
+      "templateName": "bla bla bla",
+      "templateCTime": "4/18/2015",
+      "templateDefault": false,
+      "randomNum": 8
+    }
+  ]
+}
