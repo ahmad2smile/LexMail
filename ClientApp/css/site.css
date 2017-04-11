@@ -187,11 +187,7 @@ hr{
     justify-content: space-around;
 }
 
-.mainContent > .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 .theArchetectImg{
     height: 300px;
     width: 100%;
@@ -212,6 +208,13 @@ hr{
    ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██           ██
    ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████ ███████
 */
+
+.templatesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 100px;
+}
 
 .boxContainer{
     background: transparent;

@@ -56,7 +56,7 @@ class Templates extends React.Component {
 
     render() {
         return (
-            <Row>
+            <Row className="templatesContainer">
                 {this.renderAllTemplates()}
             </Row>
         );
