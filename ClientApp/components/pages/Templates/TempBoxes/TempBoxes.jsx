@@ -1,4 +1,5 @@
 import React, { PropTypes } from "react";
+import { Link } from "react-router";
 
 import FolderIcon from "../../../../icons/FolderIcon";
 import RightArrowIcon from "../../../../icons/RightArrowIcon";
@@ -12,14 +13,14 @@ class TempBoxes extends React.Component {
 
         return (
             <div className="boxContainer">
-                <a href="#" className="templateRefBox">
+                <Link to={`/viewtemplate/${this.props.id}`} className="templateRefBox">
                     <div className="bgImageContainer">
                         <div className="templateTag">{this.props.templateTagLetter}</div>
                         <div className="templateName">{this.props.templateName}</div>
                         <div className="templateCTime">{this.props.templateCTime}</div>
                         <img src={boxBg}/>
                     </div>
-                </a>
+                </Link>
                 <a style={{backgroundColor: selectBg}} onClick={this.props.onClick} href="#" className="defaultSelectBox">
                     <RightArrowIcon/><FolderIcon/>
                 </a>

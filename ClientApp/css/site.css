@@ -349,12 +349,41 @@ hr{
     height: 190px !important;
 }
 
-.newTemplateContainer button:active,.newTemplateContainer button:hover{
+.defaultLexBtn:active,.defaultLexBtn:hover,.defaultLexBtn:focus{
     background: #DF3A02;
     color: #fff;
 }
 
-.newTemplateContainer button{
+.defaultLexBtn{
     background: #4D574C;
     color: #fff;
+}
+
+
+/*
+██    ██ ██ ███████ ██     ██     ████████ ███████ ███    ███ ██████  ██       █████  ████████ ███████
+██    ██ ██ ██      ██     ██        ██    ██      ████  ████ ██   ██ ██      ██   ██    ██    ██
+██    ██ ██ █████   ██  █  ██        ██    █████   ██ ████ ██ ██████  ██      ███████    ██    █████
+ ██  ██  ██ ██      ██ ███ ██        ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██
+  ████   ██ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
+*/
+
+.viewTempContainer{
+
+}
+
+.viewTempHead{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.viewTitle{
+    font-size: 20px;
+    align-self: center;
+}
+
+.viewTempBody{
+    padding: 20px 100px 10px 100px;
 }

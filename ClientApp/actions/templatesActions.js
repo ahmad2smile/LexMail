@@ -16,6 +16,22 @@ export function getAllTemplates() {
             });
 }
 
+export function getSingleTemplate(id){
+    return (dispatch)=> axios.get(`/api/templates/${id}`)
+            .then((response)=>{
+                dispatch({
+                    type: "TEMPLATE_SINGLE_FETCH_FULFILLED",
+                    payload: response.data
+                });
+            })
+            .catch((err)=>{
+                dispatch({
+                    type: "TEMPLATE_SINGLE_FETCH_REJECTED",
+                    payload: err
+                });
+            });
+}
+
 export function setDefaultTemplate(prvDefaultTemp, defaultTemp) {
     return (dispatch) => {
         dispatch({

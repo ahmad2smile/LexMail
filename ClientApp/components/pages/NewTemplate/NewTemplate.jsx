@@ -27,12 +27,12 @@ class NewTemplate extends React.Component {
         }
         return (
             <Row className="newContainer newTemplateContainer">
-                <div >
+                <div>
                     <div className="newTemplateHead">New Template</div>
                     <form action="/templates" onSubmit={e => this.newTemplateFormHandler(e)}>
                         <Input l={12} name="newTempName" label="Template Name"  style={{width:"100%"}}/>
                         <textarea name="newTempBody" className="materialize-textarea"></textarea>
-                        <Button type="submit" waves="light">Save</Button>
+                        <Button className="defaultLexBtn" type="submit" waves="light">Save</Button>
                     </form>
                 </div>
             </Row>
