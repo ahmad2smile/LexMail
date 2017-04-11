@@ -17,7 +17,6 @@ class NewTemplate extends React.Component {
         let formData = new FormData(e.target);
         let newTempData = {
             newTempName: formData.get("newTempName"),
-            newTempTag: formData.get("newTempName").charAt(0),
             newTempBody: formData.get("newTempBody")
         }
         this.props.dispatch(createNewTemplate(newTempData));

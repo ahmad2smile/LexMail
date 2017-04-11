@@ -35,11 +35,11 @@ export function setDefaultTemplate(prvDefaultTempId, defaultTempId) {
 
 export function createNewTemplate(newTempData) {
     return (dispatch)=>{
-        axios.post(`http://localhost:3000/templates`,{
+        axios.post(`/api/templates`,{
             "id": 4,
-            "templateTagLetter": newTempData.newTempTag,
+            "templateTagLetter": "X",
             "templateName": newTempData.newTempName,
-            "templateCTime": "4/18/2015",
+            "templateCTime": "2017-04-11T13:16:55.1841504",
             "templateDefault": false,
             "randomNum": 6,
             "templateBody": newTempData.newTempBody

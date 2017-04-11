@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Lexmail.Data;
+using Lexmail.Entities;
 using Lexmail.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lexmail.Services
 {
     public interface ITemplatesService
     {
-        Task<IEnumerable<TemplateViewModel>> GetAllAsync();
-        TemplateViewModel Find(int id);
-        void Add(TemplateViewModel template);
-        void Remove(int id);
+        Task<IEnumerable<TemplateViewModel>> GetAll();
+        Task<TemplateViewModel> Find(int id);
+        Task Add(TemplateViewModel template);
+        Task<bool> Remove(int id);
         void Update(TemplateViewModel template);
     }
 
@@ -26,7 +28,7 @@ namespace Lexmail.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<TemplateViewModel>> GetAllAsync()
+        public async Task<IEnumerable<TemplateViewModel>> GetAll()
         {
             return await _context.Templates.ToAsyncEnumerable().Select(temp => 
             new TemplateViewModel
@@ -41,17 +43,43 @@ namespace Lexmail.Services
             }).ToList();
         }
 
-        public TemplateViewModel Find(int id)
+        public async Task<TemplateViewModel> Find(int id)
         {
-            return null;
+            return await _context.Templates.Where(r => r.Id == id).Select(temp =>
+                new TemplateViewModel
+                {
+                    Id = temp.Id,
+                    TemplateTagLetter = temp.TemplateName[0],
+                    TemplateName = temp.TemplateName,
+                    TemplateCTime = temp.TemplateCTime,
+                    TemplateDefault = temp.TemplateDefault,
+                    RandomNum = randNum.Next(1, 11),
+                    TemplateBody = temp.TemplateBody
+                }).SingleAsync();
         }
 
-        public void Add(TemplateViewModel template)
+        public async Task Add(TemplateViewModel template)
         {
+            await _context.Templates.AddAsync(new TemplateModel
+            {
+                TemplateName = template.TemplateName,
+                TemplateCTime = DateTime.Now,
+                TemplateDefault = false,
+                TemplateBody = template.TemplateBody
+            });
+            await _context.SaveChangesAsync();
         }
 
-        public void Remove(int id)
+        public async Task<bool> Remove(int id)
         {
+            var temp = await _context.Templates.FindAsync(id);
+            if (temp != null)
+            {
+                _context.Templates.Remove(temp);
+                await _context.SaveChangesAsync();
+                return false;
+            }
+            else return true;
         }
 
         public void Update(TemplateViewModel template)
