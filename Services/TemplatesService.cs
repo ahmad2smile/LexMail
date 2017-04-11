@@ -15,7 +15,7 @@ namespace Lexmail.Services
         Task<TemplateViewModel> Find(int id);
         Task Add(TemplateViewModel template);
         Task<bool> Remove(int id);
-        void Update(TemplateViewModel template);
+        Task<bool> Update(TemplateViewModel template);
     }
 
     public class TemplatesService: ITemplatesService
@@ -82,8 +82,21 @@ namespace Lexmail.Services
             else return true;
         }
 
-        public void Update(TemplateViewModel template)
+        public async Task<bool> Update(TemplateViewModel template)
         {
+            var temp = await _context.Templates.FindAsync(template.Id);
+            if (temp == null)
+            {
+                return false;
+            }
+
+            temp.TemplateName = template.TemplateName;
+            temp.TemplateDefault = template.TemplateDefault;
+            temp.TemplateBody = template.TemplateBody;
+
+            _context.Templates.Update(temp);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Lexmail.Entities;
+﻿using System.Threading.Tasks;
 using Lexmail.Services;
 using Lexmail.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -48,6 +46,22 @@ namespace Lexmail.Controllers
             if (delResult)
             {
                return new NoContentResult();
+            }
+            return NotFound();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Change(int id, [FromBody] TemplateViewModel temp)
+        {
+            if (temp == null || temp.Id != id)
+            {
+                return BadRequest();
+            }
+            var result = await _templatesService.Update(temp);
+
+            if (result)
+            {
+                return new NoContentResult();
             }
             return NotFound();
         }

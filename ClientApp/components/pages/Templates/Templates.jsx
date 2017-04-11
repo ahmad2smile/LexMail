@@ -25,7 +25,7 @@ class Templates extends React.Component {
             let prvDefaultTemp = this.props.allTemplates[0].find( (item) => {
                 if (item.templateDefault) return item.id
             });
-            this.props.dispatch(setDefaultTemplate(prvDefaultTemp.id, boxData.id));
+            this.props.dispatch(setDefaultTemplate(prvDefaultTemp, boxData));
         }
         e.stopPropagation();
     }
