@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Lexmail.Entities;
 using Lexmail.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +16,9 @@ namespace Lexmail.Controllers
             _templatesService = templatesService;
         }
 
-        public JsonResult GetAll()
+        public async Task<JsonResult> GetAll()
         {
-            return Json(_templatesService.GetAll());
+            return Json(await _templatesService.GetAllAsync());
         }
     }
 }

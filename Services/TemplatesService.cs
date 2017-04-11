@@ -1,66 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Lexmail.Entities;
+using System.Threading.Tasks;
+using Lexmail.Data;
+using Lexmail.ViewModels;
 
 namespace Lexmail.Services
 {
     public interface ITemplatesService
     {
-        IEnumerable<TemplateModel> GetAll();
-        TemplateModel Find(int id);
-        void Add(TemplateModel template);
+        Task<IEnumerable<TemplateViewModel>> GetAllAsync();
+        TemplateViewModel Find(int id);
+        void Add(TemplateViewModel template);
         void Remove(int id);
-        void Update(TemplateModel template);
+        void Update(TemplateViewModel template);
     }
 
     public class TemplatesService: ITemplatesService
     {
-        public IEnumerable<TemplateModel> GetAll()
+        private readonly TemplateDbContext _context;
+        private readonly Random randNum = new Random();
+
+        public TemplatesService(TemplateDbContext context)
         {
-            IEnumerable<TemplateModel> allTemps = new[] {new TemplateModel
-            {
-                Id = 1,
-                TemplateTagLetter = "W",
-                TemplateName = "blaa lajsdblajsbd",
-                TemplateCTime = DateTime.Now,
-                TemplateDefault = true,
-                RandomNum = 4,
-                TemplateBody = "klkdflksdlfksmdlkfmsldkmf s dl sdfnlksd"
-            },
-
-            new TemplateModel
-            {
-                Id = 2,
-                TemplateTagLetter = "X",
-                TemplateName = "blaa lajsdblajsbd",
-                TemplateCTime = DateTime.Now,
-                TemplateDefault = false,
-                RandomNum = 2,
-                TemplateBody = "klkdflksdlfksmdlkfmsldkmf s dl sdfnlksd"
-            },
-
-            new TemplateModel
-            {
-                Id = 3,
-                TemplateTagLetter = "K",
-                TemplateName = "blaa lajsdblajsbd",
-                TemplateCTime = DateTime.Now,
-                TemplateDefault = false,
-                RandomNum = 9,
-                TemplateBody = "klkdflksdlfksmdlkfmsldkmf s dl sdfnlksd"
-            }
-        };
-
-            return allTemps.ToList();
+            _context = context;
         }
 
-        public TemplateModel Find(int id)
+        public async Task<IEnumerable<TemplateViewModel>> GetAllAsync()
+        {
+            return await _context.Templates.ToAsyncEnumerable().Select(temp => 
+            new TemplateViewModel
+            {
+                Id = temp.Id,
+                TemplateTagLetter = temp.TemplateName[0],
+                TemplateName = temp.TemplateName,
+                TemplateCTime = temp.TemplateCTime,
+                TemplateDefault = temp.TemplateDefault,
+                RandomNum = randNum.Next(1, 11),
+                TemplateBody = temp.TemplateBody
+            }).ToList();
+        }
+
+        public TemplateViewModel Find(int id)
         {
             return null;
         }
 
-        public void Add(TemplateModel template)
+        public void Add(TemplateViewModel template)
         {
         }
 
@@ -68,7 +54,7 @@ namespace Lexmail.Services
         {
         }
 
-        public void Update(TemplateModel template)
+        public void Update(TemplateViewModel template)
         {
         }
     }
