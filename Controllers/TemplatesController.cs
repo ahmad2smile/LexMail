@@ -53,7 +53,7 @@ namespace Lexmail.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Change(int id, [FromBody] TemplateViewModel temp)
         {
-            if (temp == null || temp.Id != id)
+            if (!ModelState.IsValid || temp.Id != id)
             {
                 return BadRequest();
             }

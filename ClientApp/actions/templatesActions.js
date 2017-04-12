@@ -32,6 +32,45 @@ export function getSingleTemplate(id){
             });
 }
 
+export function updateSingleTemplate(updatedTemp, templateEdit) {
+    return (dispatch) => {
+        if(!templateEdit){
+            dispatch({
+                type: "TEMPLATE_EDIT",
+                payload: {}
+            });
+        }
+        else{
+            dispatch({
+                type: "TEMPLATE_UPDATE",
+                payload: {}
+            });
+            axios.put(`/api/templates/${updatedTemp.id}`, {
+                "id": updatedTemp.id,
+                "templateTagLetter": updatedTemp.templateTagLetter,
+                "templateName": updatedTemp.templateName,
+                "templateCTime": updatedTemp.templateCTime,
+                "templateDefault": updatedTemp.templateDefault,
+                "randomNum": updatedTemp.randomNum,
+                "templateBody": updatedTemp.templateBody
+            })
+            .then((response)=>{
+                dispatch({
+                    type: "TEMPLATE_UPDATE_FULFILLED",
+                    payload: response
+                });
+            })
+            .catch((err) =>{
+                dispatch({
+                    type: "TEMPLATE_UPDATE_REJECTED",
+                    payload: err
+                });
+            });
+        }
+    }
+}
+
+
 export function setDefaultTemplate(prvDefaultTemp, defaultTemp) {
     return (dispatch) => {
         dispatch({

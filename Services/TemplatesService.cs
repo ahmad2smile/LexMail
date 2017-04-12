@@ -84,7 +84,7 @@ namespace Lexmail.Services
 
         public async Task<bool> Update(TemplateViewModel template)
         {
-            var temp = await _context.Templates.FindAsync(template.Id);
+            var temp = await _context.Templates.FirstOrDefaultAsync(r => r.Id == template.Id);
             if (temp == null)
             {
                 return false;

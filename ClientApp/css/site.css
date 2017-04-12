@@ -323,7 +323,7 @@ hr{
 ██   ████ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
 */
 
-.newTemplateContainer form input:focus,.newTemplateContainer form textarea:focus{
+.tempNameInput:focus,.tempBodyTextArea:focus{
     border-bottom-color: #DF3A02 !important;
     box-shadow: 0 1px 0 0 #DF3A02 !important;
 }
@@ -340,11 +340,11 @@ hr{
     overflow: hidden;
 }
 
-.newTemplateContainer form textarea{
+.tempBodyTextArea{
     overflow-y: auto;
     height: 190px !important;
 }
-.newTemplateContainer form textarea:focus{
+.tempBodyTextArea:focus{
     overflow-y: auto;
     height: 190px !important;
 }
@@ -368,8 +368,8 @@ hr{
   ████   ██ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
 */
 
-.viewTempContainer{
-
+.viewTempContainer > div{
+    height: 100%;
 }
 
 .viewTempHead{
@@ -379,11 +379,21 @@ hr{
     padding-bottom: 10px;
 }
 
-.viewTitle{
+.viewTitle > .tempNameInput{
     font-size: 20px;
     align-self: center;
+}
+.viewTitle .tempNameInput{
+    margin: 0;
 }
 
 .viewTempBody{
     padding: 20px 100px 10px 100px;
+    height: 90%;
+}
+.tempBodyTextArea, .tempBodyTextArea:active,.tempBodyTextArea:focus{
+    height: 85% !important;
+}
+.viewTempBody > .tempBodyTextArea, .viewTempHead .tempNameInput{
+    color: #444 !important;
 }

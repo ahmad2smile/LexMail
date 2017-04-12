@@ -29,9 +29,9 @@ class NewTemplate extends React.Component {
             <Row className="newContainer newTemplateContainer">
                 <div>
                     <div className="newTemplateHead">New Template</div>
-                    <form action="/templates" onSubmit={e => this.newTemplateFormHandler(e)}>
-                        <Input l={12} name="newTempName" label="Template Name"  style={{width:"100%"}}/>
-                        <textarea name="newTempBody" className="materialize-textarea"></textarea>
+                    <form action="/api/templates/" onSubmit={e => this.newTemplateFormHandler(e)}>
+                        <Input l={12} name="newTempName" label="Template Name" className="tempNameInput"  style={{width:"100%"}}/>
+                        <textarea name="newTempBody" className="tempBodyTextArea materialize-textarea"></textarea>
                         <Button className="defaultLexBtn" type="submit" waves="light">Save</Button>
                     </form>
                 </div>
