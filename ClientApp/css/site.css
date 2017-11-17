@@ -186,6 +186,8 @@ hr{
     display: flex;
     justify-content: space-around;
 }
+
+
 .theArchetectImg{
     height: 300px;
     width: 100%;
@@ -206,6 +208,13 @@ hr{
    ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██           ██
    ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████ ███████
 */
+
+.templatesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 100px;
+}
 
 .boxContainer{
     background: transparent;
@@ -314,7 +323,7 @@ hr{
 ██   ████ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
 */
 
-.newTemplateContainer form input:focus,.newTemplateContainer form textarea:focus{
+.tempNameInput:focus,.tempBodyTextArea:focus{
     border-bottom-color: #DF3A02 !important;
     box-shadow: 0 1px 0 0 #DF3A02 !important;
 }
@@ -331,21 +340,60 @@ hr{
     overflow: hidden;
 }
 
-.newTemplateContainer form textarea{
+.tempBodyTextArea{
     overflow-y: auto;
     height: 190px !important;
 }
-.newTemplateContainer form textarea:focus{
+.tempBodyTextArea:focus{
     overflow-y: auto;
     height: 190px !important;
 }
 
-.newTemplateContainer button:active,.newTemplateContainer button:hover{
+.defaultLexBtn:active,.defaultLexBtn:hover,.defaultLexBtn:focus{
     background: #DF3A02;
     color: #fff;
 }
 
-.newTemplateContainer button{
+.defaultLexBtn{
     background: #4D574C;
     color: #fff;
+}
+
+
+/*
+██    ██ ██ ███████ ██     ██     ████████ ███████ ███    ███ ██████  ██       █████  ████████ ███████
+██    ██ ██ ██      ██     ██        ██    ██      ████  ████ ██   ██ ██      ██   ██    ██    ██
+██    ██ ██ █████   ██  █  ██        ██    █████   ██ ████ ██ ██████  ██      ███████    ██    █████
+ ██  ██  ██ ██      ██ ███ ██        ██    ██      ██  ██  ██ ██      ██      ██   ██    ██    ██
+  ████   ██ ███████  ███ ███         ██    ███████ ██      ██ ██      ███████ ██   ██    ██    ███████
+*/
+
+.viewTempContainer > div{
+    height: 100%;
+}
+
+.viewTempHead{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.viewTitle > .tempNameInput{
+    font-size: 20px;
+    align-self: center;
+}
+.viewTitle .tempNameInput{
+    margin: 0;
+}
+
+.viewTempBody{
+    padding: 20px 100px 10px 100px;
+    height: 90%;
+}
+.tempBodyTextArea, .tempBodyTextArea:active,.tempBodyTextArea:focus{
+    height: 85% !important;
+}
+.viewTempBody > .tempBodyTextArea, .viewTempHead .tempNameInput{
+    color: #444 !important;
 }

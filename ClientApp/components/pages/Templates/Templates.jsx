@@ -7,37 +7,25 @@ import { getAllTemplates, setDefaultTemplate } from "../../../actions/templatesA
 
 @connect((store)=>{
     return {
-        allTemplates: store.templates.allTemplates,
-        fetching: store.templates.fetching,
-        fetched: store.templates.fetched,
-        error: store.templates.error
+        allTemplates: store.templatesFetch.allTemplates,
+        fetching: store.templatesFetch.fetching,
+        fetched: store.templatesFetch.fetched,
+        error: store.templatesFetch.error,
+        defaultTempId: store.templatesDefault.defaultTempId,
+        prvDefaultTempId: store.templatesDefault.prvDefaultTempId
     };
 })
 class Templates extends React.Component {
-    constructor(){
-        super();
-
-        this.state = {
-            defaultTempId: 0,
-            prvDefaultTempId: 0
-        }
-    }
-
     componentWillMount(){
         this.props.dispatch(getAllTemplates());
     }
 
     defaulSelectHandler(boxData, e){
-        if (e.target !== e.currentTarget && boxData.id !== this.state.defaultTempId) {
-            console.log(this.state.defaultTempId);
+        if (e.target !== e.currentTarget && boxData.id !== this.props.defaultTempId) {
             let prvDefaultTemp = this.props.allTemplates[0].find( (item) => {
                 if (item.templateDefault) return item.id
             });
-            this.setState({
-                defaultTempId: boxData.id,
-                prvDefaultTempId: prvDefaultTemp.id
-            });
-            this.props.dispatch(setDefaultTemplate(prvDefaultTemp.id, boxData.id));
+            this.props.dispatch(setDefaultTemplate(prvDefaultTemp, boxData));
         }
         e.stopPropagation();
     }
@@ -47,14 +35,14 @@ class Templates extends React.Component {
         if(!this.props.fetching && this.props.fetched){
             allTempBoxes = this.props.allTemplates[0]
                             .map((boxData, i)=>{
-                                if (this.state.defaultTempId === boxData.id) {
+                                if (this.props.defaultTempId === boxData.id) {
                                     boxData.templateDefault = true;
                                 }
-                                if(this.state.prvDefaultTempId === boxData.id && this.state.prvDefaultTempId !== this.state.defaultTempId){
+                                if(this.props.prvDefaultTempId === boxData.id && this.props.prvDefaultTempId !== this.props.defaultTempId){
                                     boxData.templateDefault = false;
                                 }
                                 return (
-                                    <Col l={4} key={i}>
+                                    <Col key={i}>
                                         <TempBoxes
                                             onClick={e => this.defaulSelectHandler(boxData, e)}
                                             {...boxData}
@@ -68,11 +56,11 @@ class Templates extends React.Component {
 
     render() {
         return (
-            <Row>
+            <Row className="templatesContainer">
                 {this.renderAllTemplates()}
             </Row>
         );
     }
 }
 
-export default Templates
+export default Templates;
